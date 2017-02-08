@@ -1,0 +1,23 @@
+PODS:
+  - Alamofire (4.3.0)
+  - OAuthSwift (1.1.0)
+  - OAuthSwiftAlamofire (0.1.0):
+    - Alamofire
+    - OAuthSwift
+  - SWXMLHash (3.0.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.3)
+  - OAuthSwift (~> 1.1.0)
+  - OAuthSwiftAlamofire
+  - SWXMLHash (~> 3.0.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  OAuthSwift: 7ec2c62274f6bdc30b1ba3b799c39a6fdcaea0e5
+  OAuthSwiftAlamofire: 20bb998ac506f82c3bab0625fbc98a9c6fca783f
+  SWXMLHash: 29d20b84692fc319ea8ed933058fe7d8d005139b
+
+PODFILE CHECKSUM: f321acf389bfea0260471b6e444b52701751c0f7
+
+COCOAPODS: 1.2.0
