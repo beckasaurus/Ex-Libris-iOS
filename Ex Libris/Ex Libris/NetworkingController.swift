@@ -101,4 +101,28 @@ extension GoodreadsRequests {
 			}
 		}
 	}
+	
+	func getBookResults(_ upc: String, completion:((_ response: [SearchResult]?, _ error: Error?) -> Void)?) throws {
+		guard let _ = goodreadsUserId
+			else {throw NetworkingControllerError.notLoggedIn}
+				
+		getRequest("/search/index.xml", params: ["q":upc]) { (response, error) in
+			if let response = response {
+			var results = [SearchResult]()
+			
+			for book in response["search"]["results"]["work"] {
+				do {
+					let book = try SearchResult.init(response: book["best_book"])
+					results.append(book)
+				} catch {
+					print("Invalid book.")
+				}
+			}
+			
+			completion?(results, nil)
+			} else {
+				completion?(nil, error)
+			}
+		}
+	}
 }

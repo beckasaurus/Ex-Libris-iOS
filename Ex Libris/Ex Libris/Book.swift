@@ -16,7 +16,6 @@ struct Book {
 	let title: String
 	let author: String
 	let description: String
-	let isUnread: Bool
 	
 	init(response: XMLIndexer) throws {
 		guard let responseTitle = response["book"]["title"].element?.text
@@ -33,7 +32,5 @@ struct Book {
 			else {throw BookError.invalidResponse}
 		
 		description = responseDescription
-		
-		isUnread = true
 	}
 }

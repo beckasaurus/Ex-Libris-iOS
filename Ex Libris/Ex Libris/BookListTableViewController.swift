@@ -17,12 +17,8 @@ class BookListTableViewController: UITableViewController {
 		//search sheet
 	}
 	
-	func tableCellIdentifier() -> String {
-		return "undefined"
-	}
-	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier(), for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier:"bookListCell", for: indexPath)
 		
 		cell.textLabel?.text = bookList[indexPath.row].title
 		cell.detailTextLabel?.text = bookList[indexPath.row].author

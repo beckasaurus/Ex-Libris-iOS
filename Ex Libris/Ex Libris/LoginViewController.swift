@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == loggedInSegue {
-			guard let destination = segue.destination as? TabBarController
+			guard let destination = segue.destination as? BookListTableViewController
 				else {return}
 			
 			guard let bookList = sender as? [Book]
