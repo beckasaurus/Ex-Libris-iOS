@@ -11,8 +11,8 @@ import OAuthSwiftAlamofire
 import Alamofire
 import SWXMLHash
 
-let developerKey: String = ""
-let secretKey: String = ""
+let developerKey: String = "JMV5PbTi1UI3tax74ChqTQ"
+let secretKey: String = "qFDjxMXQBww9GyNTvH0Y6kdbkAmijcRtSUSE6iTsHhM"
 let basePath: String = "http://www.goodreads.com"
 
 enum NetworkingControllerError: Error {

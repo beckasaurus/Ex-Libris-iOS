@@ -9,6 +9,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="dcP-fG-h0U">
+            <objects>
+                <viewController id="1iw-0f-PfP" customClass="LoginViewController" customModule="Ex_Libris" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rnu-hu-GHl"/>
+                        <viewControllerLayoutGuide type="bottom" id="kFg-0d-MHh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wlo-wZ-XBF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WN4-Uk-dmn">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logging In..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urL-2N-YHX">
+                                <rect key="frame" x="140" y="294" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="M2x-y4-025" kind="unwind" identifier="loggedInSegue" unwindAction="unwindToBookListWithSegue:" id="xj8-xe-xpW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B1r-X2-oOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="M2x-y4-025" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2634" y="-251"/>
+        </scene>
         <!--All Books-->
         <scene sceneID="NjU-3R-ksw">
             <objects>
@@ -55,10 +90,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="1iw-0f-PfP" kind="presentation" identifier="loggingInSegue" modalTransitionStyle="coverVertical" id="TqW-Dw-Vhy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wpj-Wj-iMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="412"/>
+            <point key="canvasLocation" x="3108" y="412"/>
         </scene>
         <!--Barcode Scanner View Controller-->
         <scene sceneID="z0b-RZ-sgp">
@@ -78,37 +116,6 @@
             </objects>
             <point key="canvasLocation" x="3951" y="412"/>
         </scene>
-        <!--Login View Controller-->
-        <scene sceneID="2lx-Pc-zdY">
-            <objects>
-                <viewController id="rKa-Hm-RRo" customClass="LoginViewController" customModule="Ex_Libris" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QeO-PW-Ozi"/>
-                        <viewControllerLayoutGuide type="bottom" id="NbZ-Ph-dg2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="L9A-LO-a3Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logging In..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm8-mU-TbT">
-                                <rect key="frame" x="140" y="323" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="EZE-mk-vHG"/>
-                    <connections>
-                        <segue destination="dfl-sM-zWu" kind="show" identifier="loggedIn" id="F92-ap-Tfk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a5a-9g-Vll" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2012" y="412"/>
-        </scene>
         <!--All-->
         <scene sceneID="Ud4-H9-AYk">
             <objects>
@@ -121,12 +128,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="rKa-Hm-RRo" kind="relationship" relationship="rootViewController" id="5BZ-7c-7gm"/>
+                        <segue destination="dfl-sM-zWu" kind="relationship" relationship="rootViewController" id="xbu-yJ-QFE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVm-y6-tFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="412"/>
+            <point key="canvasLocation" x="2207" y="412"/>
         </scene>
     </scenes>
     <resources>

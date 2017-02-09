@@ -8,7 +8,8 @@
 
 import UIKit
 
-let loggedInSegue = "loggedIn"
+let loggedInSegue = "loggedInSegue"
+let loggingInSegue: String = "loggingInSegue"
 
 extension Notification.Name {
 	static let loginComplete = Notification.Name(rawValue: "loginComplete")
@@ -29,7 +30,7 @@ class LoginViewController: UIViewController {
 	}
 	
 	deinit {
-		NotificationCenter.default.removeObserver(self, forKeyPath: Notification.Name.loginComplete.rawValue)
+		NotificationCenter.default.removeObserver(self)
 	}
 	
 	func loginFinished() throws {
