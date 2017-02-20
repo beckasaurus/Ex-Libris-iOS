@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D06485A1E4D2B68003E4F61 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0648591E4D2B68003E4F61 /* SearchResultsTableViewController.swift */; };
 		0D2B93E71E4922FB00C392DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B93E61E4922FB00C392DE /* AppDelegate.swift */; };
 		0D2B93EE1E4922FB00C392DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B93EC1E4922FB00C392DE /* Main.storyboard */; };
 		0D2B93F01E4922FB00C392DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B93EF1E4922FB00C392DE /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 		0D4A8DBA1E4A9EA900970CFB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4A8DB91E4A9EA900970CFB /* LoginViewController.swift */; };
 		0D4A8DBE1E4AAB5C00970CFB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4A8DBD1E4AAB5C00970CFB /* Book.swift */; };
 		0D54FC921E4A8C0E004F18B7 /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54FC911E4A8C0E004F18B7 /* NetworkingController.swift */; };
+		0D60EE8D1E4D2ED4000E5F62 /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D60EE8C1E4D2ED4000E5F62 /* SearchingViewController.swift */; };
 		0D9293401E4B576C00BA27C6 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92933F1E4B576C00BA27C6 /* BarcodeScannerViewController.swift */; };
 		0DC27B761E4B9E9D00801819 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC27B751E4B9E9D00801819 /* SearchResult.swift */; };
 		CA30A5156CBE815A14AAC2E0 /* Pods_Ex_Libris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2212A0B9001791B0065C3B74 /* Pods_Ex_Libris.framework */; };
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0648591E4D2B68003E4F61 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		0D2B93E31E4922FB00C392DE /* Ex Libris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ex Libris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2B93E61E4922FB00C392DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D2B93ED1E4922FB00C392DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		0D4A8DB91E4A9EA900970CFB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D4A8DBD1E4AAB5C00970CFB /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		0D54FC911E4A8C0E004F18B7 /* NetworkingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
+		0D60EE8C1E4D2ED4000E5F62 /* SearchingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingViewController.swift; sourceTree = "<group>"; };
 		0D92933F1E4B576C00BA27C6 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
 		0DC27B751E4B9E9D00801819 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		2212A0B9001791B0065C3B74 /* Pods_Ex_Libris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ex_Libris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0648571E4D2B38003E4F61 /* Barcode Scanning */ = {
+			isa = PBXGroup;
+			children = (
+				0D92933F1E4B576C00BA27C6 /* BarcodeScannerViewController.swift */,
+			);
+			name = "Barcode Scanning";
+			sourceTree = "<group>";
+		};
+		0D0648581E4D2B43003E4F61 /* Search Results */ = {
+			isa = PBXGroup;
+			children = (
+				0D0648591E4D2B68003E4F61 /* SearchResultsTableViewController.swift */,
+				0D60EE8C1E4D2ED4000E5F62 /* SearchingViewController.swift */,
+			);
+			name = "Search Results";
+			sourceTree = "<group>";
+		};
 		0D2B93DA1E4922FB00C392DE = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +195,8 @@
 			children = (
 				0D4A8DBB1E4AAB0E00970CFB /* Login */,
 				0D54FC901E4A8A47004F18B7 /* Book List */,
-				0D92933F1E4B576C00BA27C6 /* BarcodeScannerViewController.swift */,
+				0D0648571E4D2B38003E4F61 /* Barcode Scanning */,
+				0D0648581E4D2B43003E4F61 /* Search Results */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -383,8 +405,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D06485A1E4D2B68003E4F61 /* SearchResultsTableViewController.swift in Sources */,
 				0D4A8DBA1E4A9EA900970CFB /* LoginViewController.swift in Sources */,
 				0DC27B761E4B9E9D00801819 /* SearchResult.swift in Sources */,
+				0D60EE8D1E4D2ED4000E5F62 /* SearchingViewController.swift in Sources */,
 				0D54FC921E4A8C0E004F18B7 /* NetworkingController.swift in Sources */,
 				0D9293401E4B576C00BA27C6 /* BarcodeScannerViewController.swift in Sources */,
 				0D2B94191E4930AD00C392DE /* BookListTableViewController.swift in Sources */,

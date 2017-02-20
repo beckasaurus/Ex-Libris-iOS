@@ -27,15 +27,13 @@ class BookListTableViewController: UITableViewController {
 	}
 	
 	func refreshBookList() {
-		self.tableView.reloadData() //FIXME: replace with network call
+		//FIXME: replace with network call
+		self.tableView.reloadData()
 		self.refreshControl?.endRefreshing()
 	}
 	
-	@IBAction func addNewBook(_ sender: Any) {
-		//search sheet
-	}
-	
 	@IBAction func unwindToBookList(segue: UIStoryboardSegue) {}
+	@IBAction func addedBookToLibrary(segue: UIStoryboardSegue) {}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier:"bookListCell", for: indexPath)

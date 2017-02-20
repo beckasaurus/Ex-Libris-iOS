@@ -66,6 +66,15 @@ class NetworkingController {
 			}
 		}
 	}
+	
+	func postRequest(_ path: String, params: [String:Any]?, completion:@escaping (_ response: Bool, _ error: Error?) -> Void) {
+		sessionManager.request(basePath + path, method: .post, parameters: params, encoding: URLEncoding.default,
+		                       headers: ["Accept" : "application/xml"]).response { (requestResponse) in
+			if requestResponse.data != nil {
+				completion(true, nil)
+			}
+		}
+	}
 }
 
 private typealias GoodreadsRequests = NetworkingController
@@ -102,7 +111,7 @@ extension GoodreadsRequests {
 		}
 	}
 	
-	func getBookResults(_ upc: String, completion:((_ response: [SearchResult]?, _ error: Error?) -> Void)?) throws {
+	func getResultsForSearch(_ upc: String, completion:((_ response: [SearchResult]?, _ error: Error?) -> Void)?) throws {
 		guard let _ = goodreadsUserId
 			else {throw NetworkingControllerError.notLoggedIn}
 				
@@ -110,12 +119,12 @@ extension GoodreadsRequests {
 			if let response = response {
 			var results = [SearchResult]()
 			
-			for book in response["search"]["results"]["work"] {
+			for work in response["search"]["results"]["work"] {
 				do {
-					let book = try SearchResult.init(response: book["best_book"])
-					results.append(book)
+					let searchResult = try SearchResult.init(response: work["best_book"])
+					results.append(searchResult)
 				} catch {
-					print("Invalid book.")
+					completion?(nil, NSError.init(domain: "Ex Libris", code: 1, userInfo: ["localizedDescription" : "Error getting search results from Goodreads."]))
 				}
 			}
 			
@@ -123,6 +132,15 @@ extension GoodreadsRequests {
 			} else {
 				completion?(nil, error)
 			}
+		}
+	}
+	
+	func addBookToLibrary(_ searchResult: SearchResult, completion:((_ response: Bool, _ error: Error?) -> Void)?) throws {
+		guard let _ = goodreadsUserId
+			else {throw NetworkingControllerError.notLoggedIn}
+		
+		postRequest("/owned_books.xml", params: ["owned_book[book_id]":searchResult.id]) { (response, error) in
+			completion?(response, error)
 		}
 	}
 }
